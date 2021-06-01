@@ -2,12 +2,12 @@
 Repository per homework 2 di corso di Ingegneria del Software di UniPD.
 
 ## Istruzioni
-- Eseguire lo script per linux tramite il comando:
+- Eseguire lo script _init.sh_ tramite il comando:
     ```
     ./init.sh
     ```
-- Generare le metriche per le varie versioni del progetto attraverso il comando:
+- Generare le metriche per le varie versioni del progetto eseguendo lo script _codeMetrics.sh_:
     ```
-    java -jar ck-x.x.x-SNAPSHOT-jar-with-dependencies.jar <project dir> true 0 false
+    ./codeMetrics.sh
     ```
      
