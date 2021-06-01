@@ -2,6 +2,7 @@
 
 # Remove old code metrics
 rm -rf codeMetrics/
+mkdir codeMetrics/
 
 # Generate code metrics for each version of project
 for dir in ./project/*/
