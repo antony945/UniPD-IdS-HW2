@@ -1,7 +1,11 @@
 #! /bin/sh
 
-# Remove old JAR
-rm *.jar
+# Check if it exist another JAR file in directory
+if [ -f *.jar ]
+then
+    echo "No need to create another JAR file."
+    exit
+fi
 
 # Clone CK repository for code metrics
 git clone https://github.com/mauricioaniche/ck.git
