@@ -1,15 +1,20 @@
 #! /bin/sh
 
-# Clone CK repository for code metrics
-git clone https://github.com/mauricioaniche/ck.git
-
 # Create JAR
-cd ck/
+cd ck-ck-0.6.4/
 mvn clean compile assembly:single
 
 # Move JAR outside
 cp target/*.jar ..
 
-# Delete cloned repo
 cd ..
-rm -rf ck/
+
+# Create JAR
+cd ck-ck-0.2.1/
+mvn clean compile assembly:single
+
+# Move JAR outside
+cp target/*.jar ..
+
+cd ..
+

@@ -9,10 +9,8 @@ for dir in ./project/*/
 do
     toCreate=${dir%*/}
     toCreate=${toCreate##*/}
-    java -jar *.jar ${dir} true 0 false
+    java -jar ck-0.6.4-jar-with-dependencies.jar ${dir} true 0 false
+    java -jar ck-0.2.1-jar-with-dependencies.jar ${dir} classOld.csv
     mkdir codeMetrics/${toCreate}
     mv *.csv codeMetrics/${toCreate}
 done
-
-# Edit csv files
-python editAll.py
