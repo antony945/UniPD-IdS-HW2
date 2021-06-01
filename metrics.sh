@@ -14,3 +14,7 @@ do
     mkdir codeMetrics/${toCreate}
     mv *.csv codeMetrics/${toCreate}
 done
+
+# Run editAll and compareAll scripts
+python3 editAll.py
+python3 compareAll.py
