@@ -1,6 +1,7 @@
 #! /bin/sh
 
-rm -rf codeMetrics/*
+# Remove old code metrics
+rm -rf codeMetrics/
 
 # Generate code metrics for each version of project
 for dir in ./project/*/
