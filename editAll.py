@@ -36,7 +36,7 @@ for s in subd:
     x2 = open("method.csv","w")
 
     # all the replaced text is written in the output.csv file
-    x0.writelines(text1)
+    x0.writelines(text0)
     x0.close()
     x1.writelines(text1)
     x1.close()
