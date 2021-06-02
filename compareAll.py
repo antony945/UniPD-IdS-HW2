@@ -26,7 +26,7 @@ for s in subd:
     diff = newDf.loc[newDf["class"].isin(missingElem), ["class", "type"]]
     diff = diff.sort_values(by=["type","class"])
 
-    diff.to_csv("diff.cvs", columns=["class", "type"], index=False)
+    diff.to_csv("diff.csv", columns=["class", "type"], index=False)
 
     # Change the current working directory
     os.chdir("..")
