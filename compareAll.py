@@ -1,32 +1,32 @@
 import pandas as pd
-import csv
 import os
 from glob import glob
 
 # Change the current working directory
-os.chdir('codeMetrics')
+os.chdir("codeMetrics")
 
 # Get all immediate subdirectory
 subd = [s.rstrip("/") for s in glob("*/")]
 
 for s in subd:
-    # Change the current working directory
     os.chdir(s)
 
-    # Crea set a partire da prima colonna di class.csv
-    df = pd.read_csv('class.csv')
-    set1 = df['class'].unique()
-    set1 = set(set1)
-    # Crea set a partire da prima colonna di classOld.csv
-    df = pd.read_csv('classOld.csv')
-    set2 = df['class'].unique()
-    set2 = set(set2)
+    newDf = pd.read_csv("class.csv")
+    oldDf = pd.read_csv("classOld.csv")
 
-    # Voglio elementi presenti in class.csv ma non in classOld.csv
-    diff = set1.difference(set2)
-    with open("diff.csv","w") as f:
-        wr = csv.writer(f,delimiter="\n")
-        wr.writerow(diff)
+    newDf = newDf[["class", "type"]]
+    oldDf = oldDf[["class" , "type"]]
+
+    set1 = set(newDf["class"])
+    set2 = set(oldDf["class"])
+
+    missingElem = set1.difference(set2)
+
+	#Inserisce in diff solo gli elementi mancanti
+    diff = newDf.loc[newDf["class"].isin(missingElem), ["class", "type"]]
+    diff = diff.sort_values(by=["type","class"])
+
+    diff.to_csv("diff.cvs", columns=["class", "type"], index=False)
 
     # Change the current working directory
-    os.chdir('..')
+    os.chdir("..")
