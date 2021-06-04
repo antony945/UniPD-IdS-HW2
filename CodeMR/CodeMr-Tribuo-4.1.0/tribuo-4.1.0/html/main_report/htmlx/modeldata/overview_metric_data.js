@@ -1,0 +1,1 @@
+var CodeMR_ProjectMetrics = {"Project Name":"tribuo-4.1.0", "Number of Highly Problematic Classes":0, "Number of Entities":873, "Number of Problematic Classes":7, "Class Lines of Code":43374, "Number of External Packages":31, "Number of Packages":109, "Number of External Entities":116};var EQ_COLOR_OF_LEVELS = ["#1F77B4","#007F24","#62BF18","#FFC800","#FF5B13","#E50000"];
